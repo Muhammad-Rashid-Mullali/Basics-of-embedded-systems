@@ -1,0 +1,30 @@
+#include <reg51.h>
+sbit input2 = P2^0;
+sbit input1 = P2^1;
+sbit input3 = P2^2;
+sbit input4 = P2^3;
+void msdelay(unsigned int time)
+{
+	unsigned int i,j;
+	for(i=0;i<time;i++)
+	for(j=0;j<1275;j++);
+}
+
+void main()
+{
+	while(1)
+	{
+		input2=0;
+		input1=0;
+		input3=0;
+		input4=0;
+		msdelay(200);
+		input2=1;
+		input1=1;
+		input3=1;
+		input4=1;
+		msdelay(200);
+		
+
+	}
+}
