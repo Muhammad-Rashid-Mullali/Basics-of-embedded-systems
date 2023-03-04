@@ -1,0 +1,25 @@
+#include <reg51.h>
+void msdelay(unsigned int time)
+{
+	int i,j;
+	for(i=0;i<time;i++)
+	for(j=0;j<1275;j++);
+
+}
+sbit door_sensor = P1^1;
+sbit buzzer = P1^7;
+void main()
+{
+	while(1)
+	{
+		if(door_sensor==0)
+{
+	buzzer=1;
+		msdelay(250);
+	buzzer=1;
+		msdelay(250);
+}
+	}
+}
+
+		
